@@ -280,7 +280,7 @@ namespace Chat_Client
             ChatLog.Add("[" + DateTime.Now.ToString() + "] " + user + " : " + post);
         }
         
-        // Updates the UI
+        // Updates the UI.
         public void UpdateUI()
         {
             Console.Clear();

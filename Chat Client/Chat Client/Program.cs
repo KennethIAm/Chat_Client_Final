@@ -79,6 +79,7 @@ namespace Chat_Client
             ChatController chatController = new ChatController(receiverIP, Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString(),
                 1, new SocketHandler(), userName, receiverName);
 
+            // Test code.
             //ChatController chatController = new ChatController(Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString(),
             //    Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString(), 3, new SocketHandler(), "Kenneth", "Kenneth");
 
@@ -86,7 +87,7 @@ namespace Chat_Client
             
             Thread loadingThread = new Thread(new ThreadStart(chatController.Connect));
 
-            //loadingThread.Start();
+            loadingThread.Start();
             while (loadingThread.IsAlive)
             {
                 Console.WriteLine("LOADING");
@@ -110,7 +111,7 @@ namespace Chat_Client
 
             Thread receiveThread = new Thread(new ThreadStart(chatController.ReceiveMessage));
 
-            //receiveThread.Start();
+            receiveThread.Start();
 
             while (true)
             {
